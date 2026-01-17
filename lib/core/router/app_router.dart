@@ -10,12 +10,18 @@ import '../../features/student/screens/student_profile_screen.dart';
 import '../../features/student/screens/attendance_screen.dart';
 import '../../features/student/screens/grades_screen.dart';
 import '../../features/student/screens/fees_screen.dart';
+import '../../features/student/screens/assignments_screen.dart';
+import '../../features/student/screens/timetable_screen.dart';
+import '../../features/student/screens/exams_screen.dart';
+import '../../features/student/screens/report_card_screen.dart';
 import '../../features/parent/screens/children_list_screen.dart';
 import '../../features/parent/screens/child_detail_screen.dart';
 import '../../features/teacher/screens/class_students_screen.dart';
 import '../../features/teacher/screens/mark_attendance_screen.dart';
+import '../../features/teacher/screens/assignments_screen.dart' as teacher;
 import '../../features/notifications/screens/notifications_screen.dart';
 import '../../features/settings/screens/settings_screen.dart';
+import '../../features/common/screens/messages_screen.dart';
 
 class AppRouter {
   static final GoRouter router = GoRouter(
@@ -59,6 +65,26 @@ class AppRouter {
             builder: (context, state) => const FeesScreen(),
           ),
           GoRoute(
+            path: 'assignments',
+            builder: (context, state) => const AssignmentsScreen(),
+          ),
+          GoRoute(
+            path: 'timetable',
+            builder: (context, state) => const TimetableScreen(),
+          ),
+          GoRoute(
+            path: 'exams',
+            builder: (context, state) => const ExamsScreen(),
+          ),
+          GoRoute(
+            path: 'report-cards',
+            builder: (context, state) => const ReportCardScreen(),
+          ),
+          GoRoute(
+            path: 'messages',
+            builder: (context, state) => const MessagesScreen(),
+          ),
+          GoRoute(
             path: 'notifications',
             builder: (context, state) => const NotificationsScreen(),
           ),
@@ -84,6 +110,10 @@ class AppRouter {
             },
           ),
           GoRoute(
+            path: 'messages',
+            builder: (context, state) => const MessagesScreen(),
+          ),
+          GoRoute(
             path: 'notifications',
             builder: (context, state) => const NotificationsScreen(),
           ),
@@ -104,6 +134,14 @@ class AppRouter {
           GoRoute(
             path: 'attendance',
             builder: (context, state) => const MarkAttendanceScreen(),
+          ),
+          GoRoute(
+            path: 'assignments',
+            builder: (context, state) => const teacher.TeacherAssignmentsScreen(),
+          ),
+          GoRoute(
+            path: 'messages',
+            builder: (context, state) => const MessagesScreen(),
           ),
           GoRoute(
             path: 'notifications',
